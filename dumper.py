@@ -30,7 +30,7 @@ date = d.strftime("%Y") + d.strftime("%m")+ d.strftime("%d")
 #print(str(d.year) + str(d.day))
 
 #make dump
-call = os.system("mysqldump -u wikijs --password=Aq1ki8gt -h 127.0.0.1 %s > %s/%s_%s.%s" % (item, mount_point, item, (d.strftime("%Y") + d.strftime("%m")+ d.strftime("%d")) ,type))
+call = os.system("mysqldump -u wikijs --password=secret -h 127.0.0.1 %s > %s/%s_%s.%s" % (item, mount_point, item, (d.strftime("%Y") + d.strftime("%m")+ d.strftime("%d")) ,type))
 
 # dump list
 tmp = []
