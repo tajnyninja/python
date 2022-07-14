@@ -75,6 +75,6 @@ for i in items:
        data_pliku = strData((string[ood:doo]))
        if do_daty > data_pliku:
         print("DELETE: " + i  + " DATE: "+ str(data_pliku))
-        call = os.system("echo dziala")
+        call = os.system("rm %s/%s" % (mount_point, i))
 
 print("DONE")
