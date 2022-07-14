@@ -22,6 +22,7 @@ if not call:
        print("mount is OK")
 else:
        print("not mounted!")
+       return 1
 
 # date
 d = datetime.datetime.now()
