@@ -5,6 +5,7 @@ import datetime
 
 # vars
 print ("mount test:")
+mounted = true
 share_host = ("10.0.0.61")
 share_point = ("/ifs/backup/wiki")
 mount_point = ("/mnt/backup")
@@ -15,14 +16,14 @@ ret = 30
 
 # check mount - file in share
 #call = os.system("mount | grep \"%s:%s on %s\"" % (share_host, share_point, mount_point))
-call = os.system("ls /mnt/backup/_MOUNTED_ ")
-print(call)
+call = os.system("ls  %s/_MOUNTED_" % (mount_point))
+mounted = bool(call)
 
-if not call:
+if not mounted:
        print("mount is OK")
 else:
        print("not mounted!")
-       return 1
+       sys.exit(1)
 
 # date
 d = datetime.datetime.now()
