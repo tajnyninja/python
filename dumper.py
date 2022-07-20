@@ -39,13 +39,13 @@ tmp = []
 
 for path in os.listdir(mount_point):
        if os.path.isfile(os.path.join(mount_point, path)):
-        tmp.append(path)
+              tmp.append(path)
 
 items = []
 # prefix
 for i in tmp:
        if i.startswith((item)):
-        items.append(i)
+              items.append(i)
 
 # end
 tmp = items
