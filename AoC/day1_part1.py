@@ -1002,6 +1002,7 @@ sxfvfdkff8dvlmbdktsixmzpnxzmml2
 '''
 
 # Rozbicie tego na listę linii
+
 lista_linii = inputvar.splitlines()
 
 # Usunięcie pierwszej pozycji
