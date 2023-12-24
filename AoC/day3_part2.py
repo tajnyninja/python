@@ -1,4 +1,4 @@
-# Sprawdzam czy jest symbol
+# Sprawdzam czy jest symbolem
 def checkSymbol(char):
     return char != '.' and not char.isdigit()
 
