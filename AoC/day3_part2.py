@@ -139,6 +139,40 @@ inputvar='''....411...............838......721.....44...........................
 ..........568..818.............813..424@.............*642.............2......*...589.....678....963....*.342......162...=..=........#.......
 ......114...............81........................767......................720......................260.....................................
 '''
+# 467835
+inputvar='''467..114..
+...*......
+..35..633.
+......#...
+617*......
+.....+.58.
+..592.....
+......755.
+...$.*....
+.664.598..
+'''
+# Czytanie liczb
+def read_numbers (grid, x, y):
+    vector = [ -2, -1, 0, 1, 2]
+    number = ''
+    for dy in vector:
+        if 0 <= (dy+y) < len(grid) and grid[x][(dy+y)].isdigit():
+            #print(grid[x][(dy+y)])
+            number += ''.join(grid[x][(dy+y)])
+        print(number)
+
+# Szukanie numerów
+def find_part_numbers (grid, x ,y):
+    directions = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
+    part_number = []
+
+    for dx, dy in directions:
+        # sprawdzanie granic
+        if 0 <= (dx+x) < len(grid) and 0 <= (dy+y) < len(grid[0]):
+            # jeżeli jest cyfrą
+            if grid[(dx+x)][(dy+y)].isdigit():
+                #print(grid[(dx+x)][(dy+y)])
+                read_numbers(grid, (dx+x), (dy+y))
 
 # Podział na linie i przekształcenie każdej linii na listę znaków (grid - to listalist)
 grid = [list(line) for line in inputvar.splitlines()]
@@ -156,7 +190,7 @@ for i in range(len(grid)):
     j = 0
     while j < lineLenght:
         if grid[i][j] == '*':
-            print("Tuje gwiazdka!")
+            find_part_numbers(grid, i, j)
 
         j += 1
 
